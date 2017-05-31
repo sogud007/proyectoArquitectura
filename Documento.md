@@ -119,7 +119,7 @@ Content-Type: application/json
       "tipoDocumento": {"id": "a379f19c-8c8b-11e5-8994-feff819cdc9f", "name": "Cedula_Ciudadania"},
       "created": "timestamp",
       "update": "timestamp"
-    },        
+    }
 }
 ```
 
