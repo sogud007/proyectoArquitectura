@@ -11,6 +11,7 @@ Representa los Tipos de Documentos.
 | list | GET | /TipoDocumento | Obtiene una lista de Tipos de Documentos. |
 | create | POST | /TipoDocumento/ | Ingresar un nuevo Tipo de Documento. | 
 | delete | DELETE | /TipoDocumento/:name | Elimina un Tipo de Documento Existente. |
+| update | PUT | /Departamento/:name | Actualiza un Tipo de Documento Existente. |
 
 Nota:
 URIs relative to https://www.yourhostname.com/api/proyectoArquitectura/
@@ -126,3 +127,26 @@ Content-Type: application/json
 ```json
 { "delete": "success" }
 ```
+
+`PUT /api/proyectoArquitectura/Departamento/:name`
+----------------------------------------------
+
+Actualiza un Tipo de Documento Existente.
+
+```sh
+curl -sv -X PUT \
+	-H 'accept: application/json' \
+   	-H 'X-VirtShell-Authorization: UserId:Signature' \
+	-d '{"name": "Tarjeta_de_Identidad"}' \
+   'http://localhost:8080/api/proyectoArquitectura/TipoDocumento/Tarjeta_Identidad'
+```
+
+Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+{ "update": "success" }
+```
+
