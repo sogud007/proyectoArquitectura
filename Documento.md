@@ -11,6 +11,7 @@ Representa los Documentos.
 | list | GET | /Documento | Obtiene una lista de Documentos. |
 | create | POST | /Documento/ | Ingresar un nuevo Documento. |
 | delete | DELETE | /Documento/:numero | Elimina un Documento Existente. |
+| update | PUT | /Documento/:numero | Actualiza un Documento Existente. |
 
 Nota:
 URIs relative to https://www.yourhostname.com/api/proyectoArquitectura/
@@ -141,4 +142,26 @@ Content-Type: application/json
 ```
 ```json
 { "delete": "success" }
+```
+
+`PUT /api/proyectoArquitectura/Documento/:numero`
+----------------------------------------------
+
+Actualiza un Documento Existente.
+
+```sh
+curl -sv -X PUT \
+	-H 'accept: application/json' \
+   	-H 'X-VirtShell-Authorization: UserId:Signature' \
+	-d '{"numero": "101025422"}' \
+   'http://localhost:8080/api/proyectoArquitectura/Documento/101025421'
+```
+
+Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+{ "update": "success" }
 ```
