@@ -3,7 +3,7 @@ Documento API Reference
 
 Documento
 ====
-Representa los Tipos de Documentos.
+Representa los Documentos.
 
 | Method | HTTP request | Descripción |
 | --- | --- | ---- |
