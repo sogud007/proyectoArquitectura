@@ -120,7 +120,7 @@ Content-Type: application/json
       "created": "timestamp",
       "update": "timestamp"
     },        
-}   
+}
 ```
 
 `DELETE /api/proyectoArquitectura/Documento/:numero`
