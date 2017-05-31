@@ -21,7 +21,7 @@ Resource representations
 ```json
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-  "name": "Valle",
+  "name": "Sura",
   "direccion": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
                 "name": "Calle 2 # 37 - 124",
                 "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
