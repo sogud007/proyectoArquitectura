@@ -1,3 +1,14 @@
+Tipo de Documento API Reference
+====================
+
+Tipo de Documento
+====
+Representa los Tipos de Documentos.
+
+| Method | HTTP request | Descripción |
+| --- | --- | ---- |
+| get | GET | /TipoDocumento/:name | Obtiene un Tipo de Documento por ID. |
+| list | GET | /TipoDocumento | Obtiene una lista de Tipos de Documentos. |
 | create | POST | /TipoDocumento/ | Ingresar un nuevo Tipo de Documento. | 
 | delete | DELETE | /TipoDocumento/:name | Elimina un Tipo de Documento Existente. |
 
