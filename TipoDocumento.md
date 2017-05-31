@@ -94,16 +94,16 @@ Content-Type: application/json
   "TiposDocumento": [
     {
       "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-      "name": "Registro_Civil",
+      "name": "Registro_Civil"
     },
     {
       "id": "a379f19c-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Tarjeta_Identidad",
+      "name": "Tarjeta_Identidad"
     },
     {
       "id": "a379f3d6-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Cedula_Ciudadania",
-    },        
+      "name": "Cedula_Ciudadania"
+    }
 }   
 ```
 
