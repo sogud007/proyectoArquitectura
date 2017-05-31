@@ -1,17 +1,16 @@
-Direccion API Reference
+Dirección API Reference
 ====================
 
-Direccion
+Dirección
 ====
 Representa las Direcciones.
 
 | Method | HTTP request | Descripción |
 | --- | --- | ---- |
-| get | GET | /Direccion/:name | Obtiene un Direccion por ID. |
-| list | GET | /Direccion | Obtiene una lista de Direcciones. |
+| get | GET | /Direccion/:id | Obtiene un Direccion por ID. |
 | create | POST | /Direccion/ | Ingresar un nuevo Direccion. |
-| delete | DELETE | /Direccion/:name | Elimina un Direccion Existente. |
-| update | PUT | /Direccion/:name | Actualiza un Direccion Existente. |
+| delete | DELETE | /Direccion/:id | Elimina un Direccion Existente. |
+| update | PUT | /Direccion/:id | Actualiza un Direccion Existente. |
 
 Nota:
 URIs relative to https://www.yourhostname.com/api/proyectoArquitectura/
@@ -22,7 +21,11 @@ Resource representations
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
   "name": "Calle 2 # 37 - 124",
-  "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", "name": "Cali", "departamento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", "name": "Valle"}},
+  "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+  		"name": "Cali", 
+		"departamento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+				"name": "Valle"}
+		},
   "created": "timestamp",
   "update": "timestamp"
 }
@@ -33,14 +36,15 @@ Resource representations
 `POST /api/proyectoArquitectura/Direccion`
 --------------------------------------------
 
-Crear un nuevo Direccion.
+Crear una nueva Dirección.
 
 ```sh
 curl -sv -X POST \
   -H 'accept: application/json' \
     -H 'X-VirtShell-Authorization: UserId:Signature' \
   -d '{ 
-        "name": "Valle"
+        "name": "Valle",
+	"municipio": {"name"; "Cali", "departamento": {"name": "Valle"}}
       }' \
    'http://localhost:8080/api/proyectoArquitectura/Direccion'
 ```
@@ -54,7 +58,7 @@ Content-Type: application/json
 { "create": "success" }
 ```
 
-`GET /api/proyectoArquitectura/Direccion/:name`
+`GET /api/proyectoArquitectura/Direccion/:id`
 ----------------------------------------------
 
 Obtener un Direccion.
@@ -62,7 +66,7 @@ Obtener un Direccion.
 ```sh
 curl -sv -H 'accept: application/json' 
      -H 'X-VirtShell-Authorization: UserId:Signature' \ 
-     'http://localhost:8080/api/proyectoArquitectura/Direccion/Valle'
+     'http://localhost:8080/api/proyectoArquitectura/Direccion/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
@@ -73,45 +77,18 @@ Content-Type: application/json
 ```json
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-  "name": "Valle"
+  "name": "Calle 2 # 37 - 124",
+  "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+  		"name": "Cali", 
+		"departamento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+				"name": "Valle"}
+		},
+  "created": "timestamp",
+  "update": "timestamp"
 }
 ```
 
-`GET /api/proyectoArquitectura/Direccion/`
-----------------------------------------------
-
-Obtener todos los Direccions.
-
-```sh
-curl -sv -H 'accept: application/json' 
-     -H 'X-VirtShell-Authorization: UserId:Signature' \ 
-     'http://localhost:8080/api/proyectoArquitectura/Direccion'
-```
-
-Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-```json
-{
-  "Direccions": [
-    {
-      "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-      "name": "Valle"
-    },
-    {
-      "id": "a379f19c-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Antioquia"
-    },
-    {
-      "id": "a379f3d6-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Cundinamarca"
-    }
-}
-```
-
-`DELETE /api/proyectoArquitectura/Direccion/:name`
+`DELETE /api/proyectoArquitectura/Direccion/:id`
 ----------------------------------------------
 Eliminar un Direccion Existente.
 
@@ -119,7 +96,7 @@ Eliminar un Direccion Existente.
 curl -sv -X DELETE \
    -H 'accept: application/json' \
    -H 'X-VirtShell-Authorization: UserId:Signature' \
-   'http://localhost:8080/api/proyectoArquitectura/Direccion/Antioquia'
+   'http://localhost:8080/api/proyectoArquitectura/Direccion/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
@@ -140,8 +117,12 @@ Actualiza un Direccion Existente.
 curl -sv -X PUT \
 	-H 'accept: application/json' \
    	-H 'X-VirtShell-Authorization: UserId:Signature' \
-	-d '{"name": "Valle_del_Cauca"}' \
-   'http://localhost:8080/api/proyectoArquitectura/Direccion/Valle'
+	-d '{"name": "Calle 2 # 38 - 39"
+		"municipio": {	"name": "Cali", 
+				"departamento": {"name": "Valle"}
+		}
+	}' \
+   'http://localhost:8080/api/proyectoArquitectura/Direccion/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
