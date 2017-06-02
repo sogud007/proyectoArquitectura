@@ -113,7 +113,34 @@ curl -sv -X POST \
   -H 'accept: application/json' \
     -H 'X-VirtShell-Authorization: UserId:Signature' \
   -d '{ 
-        "name": "Valle"
+        "ciudadano": {"registro_civil": "89895553-5",
+			"registro_nacimiento": "448798266",
+			"peso": "4850"
+			"datos": {"name": "Gustavo",
+				  "name2": "Andres",
+				  "last_name": "Salazar",
+				  "last_name2": "Garzon",
+				  "genero": "Masculino",
+				  "fecha": "10/10/1900",
+				  "email": "sogud007@gmail.com",
+				  "documento": {"numero": "1010205201",
+						"tipoDocumento": {"name": "Tarjeta_Identidad"}}},
+			 "responsable": {
+					  "datos": {"name": "Gustavo",
+						    "name2": "Andres",
+						    "last_name": "Salazar",
+						    "last_name2": "Garzon",
+						    "genero": "Masculino",
+						    "fecha": "10/10/1900",
+						    "email": "sogud007@gmail.com",
+						    "documento": {"numero": "1010205201",
+								  "tipoDocumento": {"name": "Tarjeta_Identidad"}}},
+					   "direccion": { "name": "Calle 2 # 37 - 124",
+							  "municipio": {"name": "Cali", 
+							    "departamento": {"name": "Valle"}
+							    }}
+					}},
+	  "ips_creacion": { "name": "Sura"}
       }' \
    'http://localhost:8080/api/proyectoArquitectura/Carnet'
 ```
@@ -127,7 +154,7 @@ Content-Type: application/json
 { "create": "success" }
 ```
 
-`GET /api/proyectoArquitectura/Carnet/:name`
+`GET /api/proyectoArquitectura/Carnet/:id`
 ----------------------------------------------
 
 Obtener un Carnet.
@@ -135,7 +162,7 @@ Obtener un Carnet.
 ```sh
 curl -sv -H 'accept: application/json' 
      -H 'X-VirtShell-Authorization: UserId:Signature' \ 
-     'http://localhost:8080/api/proyectoArquitectura/Carnet/Valle'
+     'http://localhost:8080/api/proyectoArquitectura/Carnet/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
@@ -146,45 +173,88 @@ Content-Type: application/json
 ```json
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-  "name": "Valle"
+  "ciudadano": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                "registro_civil": "89895553-5",
+                "registro_nacimiento": "448798266",
+                "peso": "4850"
+                "datos": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                          "name": "Gustavo",
+                          "name2": "Andres",
+                          "last_name": "Salazar",
+                          "last_name2": "Garzon",
+                          "genero": "Masculino",
+                          "fecha": "10/10/1900",
+                          "email": "sogud007@gmail.com",
+                          "documento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                        "numero": "1010205201",
+                                        "tipoDocumento": {"id": "a379f19c-8c8b-11e5-8994-feff819cdc9f", 
+                                                          "name": "Tarjeta_Identidad"},
+                                        "created": "timestamp",
+                                        "update": "timestamp"},
+                          "created": "timestamp",
+                          "update": "timestamp"},
+                 "responsable": {
+                                  "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                  "datos": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                            "name": "Gustavo",
+                                            "name2": "Andres",
+                                            "last_name": "Salazar",
+                                            "last_name2": "Garzon",
+                                            "genero": "Masculino",
+                                            "fecha": "10/10/1900",
+                                            "email": "sogud007@gmail.com",
+                                            "documento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                                          "numero": "1010205201",
+                                                          "tipoDocumento": {"id": "a379f19c-8c8b-11e5-8994-feff819cdc9f", 
+                                                                            "name": "Tarjeta_Identidad"},
+                                                          "created": "timestamp",
+                                                          "update": "timestamp"},
+                                            "created": "timestamp",
+                                            "update": "timestamp"},
+                                   "direccion": { "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                                  "name": "Calle 2 # 37 - 124",
+                                                  "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+                                                      "name": "Cali", 
+                                                    "departamento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+                                                        "name": "Valle"}
+                                                    },
+                                                  "created": "timestamp",
+                                                  "update": "timestamp"}
+                                }
+                
+               },
+  "ips_creacion": { "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                    "name": "Sura",
+                    "direccion": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                                  "name": "Calle 2 # 37 - 124",
+                                  "municipio": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+                                      "name": "Cali",
+                                    "departamento": {"id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b", 
+                                        "name": "Valle"}
+                                    },
+                                  "created": "timestamp",
+                                  "update": "timestamp"}
+                  },
+  "vacunas": [{ "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+                "name": "Viruela",
+                "laboratorio": "Pfizer"
+              },
+              {
+                "id": "a379f19c-8c8b-11e5-8994-feff819cdc9f",
+                "name": "Viruela",
+                "laboratorio": "Wyeth"
+              },
+              {
+                "id": "a379f3d6-8c8b-11e5-8994-feff819cdc9f",
+                "name": "Viruela",
+                "laboratorio": "Sanofi"
+              }],
+  "created": "timestamp",
+  "update": "timestamp"
 }
 ```
 
-`GET /api/proyectoArquitectura/Carnet/`
-----------------------------------------------
-
-Obtener todos los Carnets.
-
-```sh
-curl -sv -H 'accept: application/json' 
-     -H 'X-VirtShell-Authorization: UserId:Signature' \ 
-     'http://localhost:8080/api/proyectoArquitectura/Carnet'
-```
-
-Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-```json
-{
-  "Carnets": [
-    {
-      "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
-      "name": "Valle"
-    },
-    {
-      "id": "a379f19c-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Antioquia"
-    },
-    {
-      "id": "a379f3d6-8c8b-11e5-8994-feff819cdc9f",
-      "name": "Cundinamarca"
-    }
-}
-```
-
-`DELETE /api/proyectoArquitectura/Carnet/:name`
+`DELETE /api/proyectoArquitectura/Carnet/:id`
 ----------------------------------------------
 Eliminar un Carnet Existente.
 
@@ -192,7 +262,7 @@ Eliminar un Carnet Existente.
 curl -sv -X DELETE \
    -H 'accept: application/json' \
    -H 'X-VirtShell-Authorization: UserId:Signature' \
-   'http://localhost:8080/api/proyectoArquitectura/Carnet/Antioquia'
+   'http://localhost:8080/api/proyectoArquitectura/Carnet/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
@@ -204,7 +274,7 @@ Content-Type: application/json
 { "delete": "success" }
 ```
 
-`PUT /api/proyectoArquitectura/Carnet/:name`
+`PUT /api/proyectoArquitectura/Carnet/:id`
 ----------------------------------------------
 
 Actualiza un Carnet Existente.
@@ -213,8 +283,37 @@ Actualiza un Carnet Existente.
 curl -sv -X PUT \
 	-H 'accept: application/json' \
    	-H 'X-VirtShell-Authorization: UserId:Signature' \
-	-d '{"name": "Valle_del_Cauca"}' \
-   'http://localhost:8080/api/proyectoArquitectura/Carnet/Valle'
+	-d '{
+		"ciudadano": {  "registro_civil": "89895553-5",
+				"registro_nacimiento": "448798266",
+				"peso": "4850"
+				"datos": {"name": "Gustavo",
+					  "name2": "Andres",
+					  "last_name": "Salazar",
+					  "last_name2": "Garzon",
+					  "genero": "Masculino",
+					  "fecha": "10/10/1900",
+					  "email": "sogud007@gmail.com",
+					  "documento": {"numero": "1010205201",
+							"tipoDocumento": {"name": "Tarjeta_Identidad"}}},
+				 "responsable": {
+						  "datos": {"name": "Gustavo",
+							    "name2": "Andres",
+							    "last_name": "Salazar",
+							    "last_name2": "Garzon",
+							    "genero": "Masculino",
+							    "fecha": "10/10/1900",
+							    "email": "sogud007@gmail.com",
+							    "documento": {"numero": "1010205201",
+									  "tipoDocumento": {"name": "Tarjeta_Identidad"}}},
+						   "direccion": { "name": "Calle 2 # 37 - 124",
+								  "municipio": {"name": "Cali", 
+								    "departamento": {"name": "Valle"}
+								    }}
+						}},
+		  "ips_creacion": { "name": "Sura"}
+	    }' \
+   'http://localhost:8080/api/proyectoArquitectura/Carnet/ab8076c0-db91-11e2-82ce-0002a5d5c51b'
 ```
 
 Response:
