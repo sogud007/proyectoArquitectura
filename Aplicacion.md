@@ -1,7 +1,7 @@
-Aplicacion API Reference
+Aplicación API Reference
 ====================
 
-Aplicacion
+Aplicación
 ====
 Representa las Aplicaciones de las Vacunas en los Ciudadanos.
 
@@ -52,7 +52,7 @@ Resource representations
 `POST /api/proyectoArquitectura/Aplicacion`
 --------------------------------------------
 
-Crear un nuevo registro de Aplicacion.
+Crear un nuevo registro de Aplicación.
 
 ```sh
 curl -sv -X POST \
@@ -89,7 +89,7 @@ Content-Type: application/json
 `GET /api/proyectoArquitectura/Aplicacion/:id`
 ----------------------------------------------
 
-Obtener un registro de Aplicacion por ID.
+Obtener un registro de Aplicación por ID.
 
 ```sh
 curl -sv -H 'accept: application/json' 
