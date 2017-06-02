@@ -51,7 +51,7 @@ Resource representations
 `POST /api/proyectoArquitectura/Aplicacion`
 --------------------------------------------
 
-Crear un nuevo Aplicacion.
+Crear un nuevo registro de Aplicacion.
 
 ```sh
 curl -sv -X POST \
