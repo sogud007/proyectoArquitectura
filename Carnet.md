@@ -9,8 +9,8 @@ Representa los Carnets de Vacunas.
 | --- | --- | ---- |
 | get | GET | /Carnet/:id | Obtiene una Carnet por ID. |
 | create | POST | /Carnet/ | Ingresar un nuevo Carnet. |
-| delete | DELETE | /Carnet/:name | Elimina un Carnet Existente. |
-| update | PUT | /Carnet/:name | Actualiza un Carnet Existente. |
+| delete | DELETE | /Carnet/:id | Elimina un Carnet Existente. |
+| update | PUT | /Carnet/:id | Actualiza un Carnet Existente. |
 
 Nota:
 URIs relative to https://www.yourhostname.com/api/proyectoArquitectura/
