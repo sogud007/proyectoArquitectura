@@ -21,6 +21,7 @@ Resource representations
 ```json
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+  "id_carnet": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
   "edad": "12",
   "tipo_edad": "Años",
   "dosis": "1",
@@ -58,6 +59,7 @@ curl -sv -X POST \
   -H 'accept: application/json' \
     -H 'X-VirtShell-Authorization: UserId:Signature' \
   -d '{ 
+  	"id_carnet": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
         "edad": "12",
         "tipo_edad": "Años",
         "dosis": "1",
@@ -103,6 +105,7 @@ Content-Type: application/json
 ```json
 {
   "id": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
+  "id_carnet": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
   "edad": "12",
   "tipo_edad": "Años",
   "dosis": "1",
@@ -255,6 +258,7 @@ curl -sv -X PUT \
 	-H 'accept: application/json' \
    	-H 'X-VirtShell-Authorization: UserId:Signature' \
 	-d '{
+	"id_carnet": "ab8076c0-db91-11e2-82ce-0002a5d5c51b",
         "edad": "12",
         "tipo_edad": "Años",
         "dosis": "1",
